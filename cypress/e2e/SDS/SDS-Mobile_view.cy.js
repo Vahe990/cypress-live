@@ -56,22 +56,54 @@ describe('SDS-LendWyse Automation', () => {
 
         cy.get('.mb-0 > .btn > .btn-inner--text').first().click();
         cy.wait(3000);
-    
-        cy.get('.amount-field > .col-12 > .custom-select').select("17500", { force: true });
+
+        cy.get('input[value="40000"]').click();
+        cy.get('.step1 > .fieldset-content > .next-step').click();
+        cy.wait(2000);
+
+        cy.get('input[value="Debt Consolidation"]').click();
+        cy.wait(2000);
+
+        cy.get('input[value="I owe LESS THAN $20,000"]').click({force: true});
+        cy.wait(1500);
+        cy.get('.step3 > .fieldset-content > .next-step').click({force: true});
+        cy.wait(2000);
+
+        cy.get('input[value="Yes, I am"]').click({force: true});
+        cy.wait(1500);
+        cy.get('[style="display: block; opacity: 1;"] > .fieldset-content > .next-step').click({force: true});
+        cy.wait(2000);
+
+        cy.get('input[name="annual_income"]').type('65000');
+        cy.get('input[value="Bi-Weekly"]').click();
+        cy.get('.step4 > .fieldset-content > .next-step').click({force: true});
+        cy.wait(2000);
+
         cy.get('input[name="first_name"]').type('Daniel');
         cy.get('input[name="last_name"]').type('Drozdov');
-        cy.get(':nth-child(6) > .col-12 > .form-control').type('12121999');
+        cy.get('input[name="date_of_birth"]').type('12121990');
+        cy.get('.step5 > .fieldset-content > .next-step').click({force: true});
+        cy.wait(2000);
+
         cy.get('input[name="email"]').type('igor@aol.com');
-        cy.get('input[name="phone_number"]').type('4123269028');
-        cy.get('input[name="home_address"]').type('2940 W 5th St');
+        cy.get('input[name="phone_number"]').type('7436502222');
+        cy.get('input[name="home_address"]').type('1st Good st');
         cy.get('input[name="city"]').type('Brooklyn');
-        cy.get('select[name="state"]').select('NY');   
-        cy.get('input[name="zip_code"]').type('11224');
-        
-        cy.get('button#submit').click();
-        cy.wait(5000);
-    
-        cy.get('div[class="row"]').should('be.visible')
+        cy.get('#state').select('NY');
+        cy.get('input[name="zip_code"]').type('23234');
+        cy.get('.step6 > .fieldset-content > .next-step').click({force: true});
+        cy.wait(2000);
+
+        cy.get('a.show-additional-reviews').click()
+        cy.get('div[class="review-content"]').should('be.visible');
+        cy.get('.step7 > .fieldset-content > .next-step').click();
+        // cy.wait(8000);
+
+        // cy.get('#ssn').type('123456789');
+        // cy.get('#ssn_fieldset > .fieldset-content > .next-step').click();
+        cy.wait(24500);
+
+        cy.get('.mt-2 > .pt-3').should('be.visible')
     });
 
     it('Lendwyse 2', () => {
@@ -97,20 +129,52 @@ describe('SDS-LendWyse Automation', () => {
         cy.get('select[name="debt_amount"]').select('17500');
         cy.wait(3000);
         
+        cy.get('.step1 > .fieldset-content > .next-step').click();
+        cy.wait(2000);
+
+        cy.get('input[value="Debt Consolidation"]').click();
+        cy.wait(2000);
+
+        cy.get('input[value="I owe LESS THAN $20,000"]').click({force: true});
+        cy.wait(1500);
+        cy.get('.step3 > .fieldset-content > .next-step').click({force: true});
+        cy.wait(2000);
+
+        cy.get('input[value="Yes, I am"]').click({force: true});
+        cy.wait(1500);
+        cy.get('[style="display: block; opacity: 1;"] > .fieldset-content > .next-step').click({force: true});
+        cy.wait(2000);
+
+        cy.get('input[name="annual_income"]').type('65000');
+        cy.get('input[value="Bi-Weekly"]').click();
+        cy.get('.step4 > .fieldset-content > .next-step').click({force: true});
+        cy.wait(2000);
+
         cy.get('input[name="first_name"]').type('Daniel');
         cy.get('input[name="last_name"]').type('Drozdov');
-        cy.get(':nth-child(6) > .col-12 > .form-control').type('12121999');
+        cy.get('input[name="date_of_birth"]').type('12121990');
+        cy.get('.step5 > .fieldset-content > .next-step').click({force: true});
+        cy.wait(2000);
+
         cy.get('input[name="email"]').type('igor@aol.com');
-        cy.get('input[name="phone_number"]').type('4123269028');
-        cy.get(':nth-child(9) > .col-12 > .form-control').type('12st Good Morning');
-        cy.get(':nth-child(10) > .col-12 > .form-control').type('Brooklyn');
-        cy.get('select[name="state"]').select('NY');   
-        cy.get(':nth-child(12) > .col-12 > .form-control').type('34345')
-        
-        cy.get('button#submit').click();
-        cy.wait(5000);
-    
-        cy.get('div[class="row"]').should('be.visible')
+        cy.get('input[name="phone_number"]').type('7436502222');
+        cy.get('input[name="home_address"]').type('1st Good st');
+        cy.get('input[name="city"]').type('Brooklyn');
+        cy.get('#state').select('NY');
+        cy.get('input[name="zip_code"]').type('23234');
+        cy.get('.step6 > .fieldset-content > .next-step').click({force: true});
+        cy.wait(2000);
+
+        cy.get('a.show-additional-reviews').click()
+        cy.get('div[class="review-content"]').should('be.visible');
+        cy.get('.step7 > .fieldset-content > .next-step').click();
+        // cy.wait(8000);
+
+        // cy.get('#ssn').type('123456789');
+        // cy.get('#ssn_fieldset > .fieldset-content > .next-step').click();
+        cy.wait(24500);
+
+        cy.get('.mt-2 > .pt-3').should('be.visible')
     });
 
     it('Lendwyse Apply-FB', () => {
@@ -119,20 +183,52 @@ describe('SDS-LendWyse Automation', () => {
         cy.get('.custom-select').select("17500", { force: true });
         cy.wait(3000);
         
+        cy.get('.step1 > .fieldset-content > .next-step').click();
+        cy.wait(2000);
+
+        cy.get('input[value="Debt Consolidation"]').click();
+        cy.wait(2000);
+
+        cy.get('input[value="I owe LESS THAN $20,000"]').click({force: true});
+        cy.wait(1500);
+        cy.get('.step3 > .fieldset-content > .next-step').click({force: true});
+        cy.wait(2000);
+
+        cy.get('input[value="Yes, I am"]').click({force: true});
+        cy.wait(1500);
+        cy.get('[style="display: block; opacity: 1;"] > .fieldset-content > .next-step').click({force: true});
+        cy.wait(2000);
+
+        cy.get('input[name="annual_income"]').type('65000');
+        cy.get('input[value="Bi-Weekly"]').click();
+        cy.get('.step4 > .fieldset-content > .next-step').click({force: true});
+        cy.wait(2000);
+
         cy.get('input[name="first_name"]').type('Daniel');
         cy.get('input[name="last_name"]').type('Drozdov');
-        cy.get(':nth-child(6) > .col-12 > .form-control').type('12121999');
+        cy.get('input[name="date_of_birth"]').type('12121990');
+        cy.get('.step5 > .fieldset-content > .next-step').click({force: true});
+        cy.wait(2000);
+
         cy.get('input[name="email"]').type('igor@aol.com');
-        cy.get('input[name="phone_number"]').type('4123269028');
-        cy.get(':nth-child(9) > .col-12 > .form-control').type('12st Good Morning');
-        cy.get(':nth-child(10) > .col-12 > .form-control').type('Brooklyn');
-        cy.get('select[name="state"]').select('NY');   
-        cy.get(':nth-child(12) > .col-12 > .form-control').type('34345')
-        
-        cy.get('button#submit').click();
-        cy.wait(5000);
-    
-        cy.get('div[class="row"]').should('be.visible')
+        cy.get('input[name="phone_number"]').type('7436502222');
+        cy.get('input[name="home_address"]').type('1st Good st');
+        cy.get('input[name="city"]').type('Brooklyn');
+        cy.get('#state').select('NY');
+        cy.get('input[name="zip_code"]').type('23234');
+        cy.get('.step6 > .fieldset-content > .next-step').click({force: true});
+        cy.wait(2000);
+
+        cy.get('a.show-additional-reviews').click()
+        cy.get('div[class="review-content"]').should('be.visible');
+        cy.get('.step7 > .fieldset-content > .next-step').click();
+        // cy.wait(8000);
+
+        // cy.get('#ssn').type('123456789');
+        // cy.get('#ssn_fieldset > .fieldset-content > .next-step').click();
+        cy.wait(24500);
+
+        cy.get('.mt-2 > .pt-3').should('be.visible')
     });
 
     it('Lendwyse Apply-SIMPLE', () => {
@@ -1391,21 +1487,54 @@ describe('SDS-LendWyse Automation', () => {
         cy.get('.custom-select').first().select("17500");
         cy.wait(3000);
         
+        cy.get('.step1 > .fieldset-content > .next-step').click();
+        cy.wait(2000);
+
+        cy.get('input[value="Debt Consolidation"]').click();
+        cy.wait(2000);
+
+        cy.get('input[value="I owe LESS THAN $20,000"]').click({force: true});
+        cy.wait(1500);
+        cy.get('.step3 > .fieldset-content > .next-step').click({force: true});
+        cy.wait(2000);
+
+        cy.get('input[value="Yes, I am"]').click({force: true});
+        cy.wait(1500);
+        cy.get('[style="display: block; opacity: 1;"] > .fieldset-content > .next-step').click({force: true});
+        cy.wait(2000);
+
+        cy.get('input[name="annual_income"]').type('65000');
+        cy.get('input[value="Bi-Weekly"]').click();
+        cy.get('.step4 > .fieldset-content > .next-step').click({force: true});
+        cy.wait(2000);
+
         cy.get('input[name="first_name"]').type('Daniel');
         cy.get('input[name="last_name"]').type('Drozdov');
-        cy.get(':nth-child(6) > .col-12 > .form-control').type('12121999');
+        cy.get('input[name="date_of_birth"]').type('12121990');
+        cy.get('.step5 > .fieldset-content > .next-step').click({force: true});
+        cy.wait(2000);
+
         cy.get('input[name="email"]').type('igor@aol.com');
-        cy.get('input[name="phone_number"]').type('4123269028');
-        cy.get(':nth-child(9) > .col-12 > .form-control').type('12st Good Morning');
-        cy.get(':nth-child(10) > .col-12 > .form-control').type('Brooklyn');
-        cy.get('select[name="state"]').select('NY');   
-        cy.get(':nth-child(12) > .col-12 > .form-control').type('34345')
-        
-        cy.get('button#submit').click();
-        cy.wait(5000);
-    
-        cy.get('div[class="row"]').should('be.visible')
+        cy.get('input[name="phone_number"]').type('7436502222');
+        cy.get('input[name="home_address"]').type('1st Good st');
+        cy.get('input[name="city"]').type('Brooklyn');
+        cy.get('#state').select('NY');
+        cy.get('input[name="zip_code"]').type('23234');
+        cy.get('.step6 > .fieldset-content > .next-step').click({force: true});
+        cy.wait(2000);
+
+        cy.get('a.show-additional-reviews').click()
+        cy.get('div[class="review-content"]').should('be.visible');
+        cy.get('.step7 > .fieldset-content > .next-step').click();
+        // cy.wait(8000);
+
+        // cy.get('#ssn').type('123456789');
+        // cy.get('#ssn_fieldset > .fieldset-content > .next-step').click();
+        cy.wait(24500);
+
+        cy.get('.mt-2 > .pt-3').should('be.visible')
     });
+
 
     it('Swift Lending USA source=LW_WEB_E', () => {
         cy.visit('https://polymorphic:polymorphic2021@swiftlendingusa.polymorphic-sandbox.com/?source=LW_WEB_E');
