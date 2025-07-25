@@ -5,7 +5,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 describe('Advance.Cash Full Application Test', () => {
   it('Should complete the entire application process', () => {
   
-    cy.visit('https://www.advance-cash.polymorphic-sandbox.com');
+    cy.visit('https://polymorphic:polymorphic@advance-cash.polymorphic-sandbox.com');
     
     //  Fill the first page form
     cy.get('input[name="first_name"]').type('Vah');

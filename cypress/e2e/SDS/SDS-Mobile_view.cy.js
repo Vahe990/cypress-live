@@ -747,9 +747,13 @@ describe('SDS-LendWyse Automation', () => {
         
         cy.get('input[name="first_name"]').type('Daniel');
         cy.get('input[name="last_name"]').type('Drozdov');
+        cy.get(':nth-child(6) > .col-12 > .form-control').type('12121989')
         cy.get('input[name="email"]').type('igor@aol.com');
         cy.get('input[name="phone_number"]').type('4123269028');
+        cy.get(':nth-child(9) > .col-12 > .form-control').type('1 Good st');
+        cy.get(':nth-child(10) > .col-12 > .form-control').type('Brooklyn');
         cy.get('select[name="state"]').select('NY');
+        cy.get(':nth-child(12) > .col-12 > .form-control').type('19285')
                 
         cy.get('button#submit').click();
         cy.wait(5000);

@@ -5,7 +5,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 describe('Advance.Cash Login Flow', () => {
   it('Should navigate to the login page and attempt login', () => {
   
-    cy.visit('https://www.advance-cash.polymorphic-sandbox.com');  
+    cy.visit('https://polymorphic:polymorphic@advance-cash.polymorphic-sandbox.com');  
     cy.contains('Sign In').click(); 
     cy.url().should('include', '/sign-in');
     cy.wait(3000);
