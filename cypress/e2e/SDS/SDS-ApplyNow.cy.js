@@ -93,11 +93,11 @@ describe('SDS-LendWyse Automation', () => {
         cy.get('a.show-additional-reviews').click()
         cy.get('div[class="review-content"]').should('be.visible');
         cy.get('.step7 > .fieldset-content > .next-step').click();
-        // cy.wait(8000);
+        cy.wait(5000);
 
-        // cy.get('#ssn').type('123456789');
-        // cy.get('#ssn_fieldset > .fieldset-content > .next-step').click();
-        cy.wait(24500);
+        cy.get('#ssn').type('123456789');
+        cy.get('#ssn_fieldset > .fieldset-content > .next-step').click();
+        cy.wait(21000);
 
         cy.get('.mt-2 > .pt-3').should('be.visible')
     });
@@ -165,11 +165,11 @@ describe('SDS-LendWyse Automation', () => {
         cy.get('a.show-additional-reviews').click()
         cy.get('div[class="review-content"]').should('be.visible');
         cy.get('.step7 > .fieldset-content > .next-step').click();
-        // cy.wait(8000);
+        cy.wait(5000);
 
-        // cy.get('#ssn').type('123456789');
-        // cy.get('#ssn_fieldset > .fieldset-content > .next-step').click();
-        cy.wait(24500);
+        cy.get('#ssn').type('123456789');
+        cy.get('#ssn_fieldset > .fieldset-content > .next-step').click();
+        cy.wait(21000);
 
         cy.get('.mt-2 > .pt-3').should('be.visible')
     });
@@ -219,11 +219,11 @@ describe('SDS-LendWyse Automation', () => {
         cy.get('a.show-additional-reviews').click()
         cy.get('div[class="review-content"]').should('be.visible');
         cy.get('.step7 > .fieldset-content > .next-step').click();
-        // cy.wait(8000);
+        cy.wait(5000);
 
-        // cy.get('#ssn').type('123456789');
-        // cy.get('#ssn_fieldset > .fieldset-content > .next-step').click();
-        cy.wait(24500);
+        cy.get('#ssn').type('123456789');
+        cy.get('#ssn_fieldset > .fieldset-content > .next-step').click();
+        cy.wait(21000);
 
         cy.get('.mt-2 > .pt-3').should('be.visible')
     });
@@ -1577,11 +1577,11 @@ describe('SDS-LendWyse Automation', () => {
         cy.get('a.show-additional-reviews').click()
         cy.get('div[class="review-content"]').should('be.visible');
         cy.get('.step7 > .fieldset-content > .next-step').click();
-        // cy.wait(8000);
+        cy.wait(5000);
 
-        // cy.get('#ssn').type('123456789');
-        // cy.get('#ssn_fieldset > .fieldset-content > .next-step').click();
-        cy.wait(24500);
+        cy.get('#ssn').type('123456789');
+        cy.get('#ssn_fieldset > .fieldset-content > .next-step').click();
+        cy.wait(21000);
 
         cy.get('.mt-2 > .pt-3').should('be.visible')
     });
