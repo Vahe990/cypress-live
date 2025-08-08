@@ -21,8 +21,9 @@ describe('Advance.Cash Full Application Test', () => {
 
     //  Fill the second page form
     cy.get('input[name="ssn"]').type('123456789');
-
     cy.get('input[name="address"]').type('59 Wywie St');
+    cy.get('#valid_driver_license').type('G1767880');
+    cy.get('#state_issued').select('DE');
     cy.get('input[name="city"]').type('Tytycie');
     cy.get('input[name="zip"]').type('12349');
     cy.get('input[name="home_phone"]').type('2727860655');
@@ -57,6 +58,8 @@ describe('Advance.Cash Full Application Test', () => {
     cy.get('input#check_condition').click();
 
     cy.get('button').contains('Apply').click();
-    cy.wait(3000)
+    cy.wait(4000);
+
+    cy.get('h2').should('be.visible')
   });
 });
