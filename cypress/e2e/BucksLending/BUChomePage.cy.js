@@ -17,8 +17,8 @@ describe('Content Tests for Bucks Lending', () => {
 
       cy.get('div.text-button.text-secondary').contains('How Does The Process Work?').click();
       cy.get('div[class="container"]').should('be.visible');
-      // cy.get('a.orange-button[href="/apply-now"]')
-      //   .should('be.visible');
+      cy.get('a.orange-button[href="/apply-now"]')
+        .should('be.visible');
 
       cy.get('a.nav-link[href="/"]').first().click();
       cy.wait(3000)
@@ -36,8 +36,8 @@ describe('Content Tests for Bucks Lending', () => {
       cy.get('a.link-light.text-underline[href="/rates"]').click();
       cy.get('table[class="table mb-5 mt-5"]').should('be.visible');
       cy.go('back');
-      // cy.get('a.orange-button[href="/apply-now"]')
-      //   .should('be.visible');
+      cy.get('a.orange-button[href="/apply-now"]')
+        .should('be.visible');
   
       cy.get('a.nav-link[href="/"]').first().click();
       cy.wait(3000)
@@ -63,8 +63,8 @@ describe('Content Tests for Bucks Lending', () => {
       cy.get('div.text-button.text-secondary').contains('Late / NSF Fees').click();
       cy.get('div[class="body2 text-secondary mt-16"]').contains('Bucks Lending reserves the right to assess an NSF fee of up to $15').should('be.visible');
 
-      // cy.get('a.orange-button[href="/apply-now"]')
-      //   .should('be.visible');
+      cy.get('a.orange-button[href="/apply-now"]')
+        .should('be.visible');
     
       cy.get('a.nav-link[href="/"]').first().click();
       cy.wait(3000)
