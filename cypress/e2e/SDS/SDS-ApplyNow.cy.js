@@ -1648,22 +1648,28 @@ describe('SDS-LendWyse Automation', () => {
         cy.visit('https://polymorphic:polymorphic2021@yoursimpleoffer.polymorphic-sandbox.com/dc');
     
         cy.get('select[name="debt_amount"]').select('17500');
-        cy.wait(3000);
+        cy.wait(1000);
         
         cy.get('input[name="first_name"]').type('Daniel');
         cy.get('input[name="last_name"]').type('Drozdov');
+        cy.get('.input-step-step-0 > :nth-child(6) > .col-12 > .form-control').type('igor@aol.com');
+        cy.get(':nth-child(5) > .col-12 > .form-control').type('4123269028');
+        cy.get('.input-step-step-0 > .btn').click();
+        cy.wait(1000);
+
         cy.get('input[name="date_of_birth"]').type('04/05/1992');
-        cy.get('input[name="email"]').type('igor@aol.com');
-        cy.get('input[name="phone_number"]').type('4123269028');
         cy.get('input[name="home_address"]').type('2940 W 5th St');
         cy.get('input[name="city"]').type('Brooklyn');
         cy.get('select[name="state"]').select('NY');
         cy.get('input[name="zip_code"]').type('19285');
-                
+        
         cy.get('button#submit').click();
-        cy.wait(5000);
-    
-        cy.get('div[class="row"]').should('be.visible')        
+        cy.wait(1000);
+        cy.get('div[class="row"]').should('be.visible');       
+
+        cy.get('.form-row.ssn > .col-12 > .form-control').type('1234567890');
+        cy.get('#submit').click();
+        cy.wait(8000)
     });
     
     
