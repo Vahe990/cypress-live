@@ -1,6 +1,6 @@
 Cypress.on('uncaught:exception', () => false);
 
-const BASE_URL = 'http://localhost:8082';
+const BASE_URL = 'https://advance-cash.polymorphic-sandbox.com';
 const VALID_EMAIL = 'team@polymorphic.io';
 const VALID_PASSWORD = 'Asdasd123!';
 
